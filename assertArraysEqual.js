@@ -28,7 +28,13 @@ const eqArrays = function(arrayOne, arrayTwo) {
   } else return true;
 };
 
-(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
-(assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true));
-(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true));
-(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true));
+const assertArraysEqual = function(arraysOne, arraysTwo){
+  if (eqArrays(arraysOne, arraysTwo) === true){
+    console.log(`\uD83D\uDC7D Assertion Passed: ${arraysOne} === ${arraysTwo}`);
+  } else console.log(`\uD83E\uDD2E Assertion Failed: ${arraysOne} !== ${arraysTwo}`);
+}
+
+assertArraysEqual([1, 2, 3], [1, 2, 3]);
+assertArraysEqual([1, 2, 3], [3, 2, 1]);
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
