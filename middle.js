@@ -23,23 +23,6 @@ const eqArrays = function(arrayOne, arrayTwo) {
       return false
     } 
   } return true;
-  /*
-  let out = [];
-  
-  if (typeof arrayOne === 'undefined' && typeof arrayTwo === 'undefined'){
-    out.push("true");
-  } else { 
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] === arrayTwo[i] && (typeof(arrayOne[i]) === "string" || typeof(arrayTwo[i]) === "string")) {
-      out.push("true");
-    } else if (arrayOne[i] === arrayTwo[i] && (typeof(arrayOne[i]) === "number" || typeof(arrayTwo[i]) === "number")) {
-      out.push("true");
-    } else out.push("false");
-    if (out.includes("false")) {
-      return false;
-    } else return true;
-  }
-}*/
 };
 
 const assertArraysEqual = function(arraysOne, arraysTwo){
