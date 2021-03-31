@@ -15,17 +15,14 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(arrayOne, arrayTwo) {
-  let out = [];
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] === arrayTwo[i] && (typeof(arrayOne[i]) === "string" || typeof(arrayTwo[i]) === "string")) {
-      out.push("true");
-    } else if (arrayOne[i] === arrayTwo[i] && (typeof(arrayOne[i]) === "number" || typeof(arrayTwo[i]) === "number")) {
-      out.push("true");
-    } else out.push("false");
+  if (arrayOne.length !== arrayTwo.length){
+    return false
   }
-  if (out.includes("false")) {
-    return false;
-  } else return true;
+  for (let i =0; i < arrayOne.length; i++){
+    if (arrayOne[i] !== arrayTwo[i]){
+      return false
+    } 
+  } return true;
 };
 
 const assertArraysEqual = function(arraysOne, arraysTwo){
