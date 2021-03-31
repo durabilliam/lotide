@@ -11,27 +11,40 @@ const assertEqual = function(actual, expected) {
     console.log(`\uD83D\uDC7D Assertion Passed: ${actual} === ${expected}`);
   } else if (actual !== expected && (typeof(actual) === "bolean" || typeof(expected) === "boolean")) {
     console.log(`\uD83E\uDD2E Assertion Failed: ${actual} !== ${expected}`);
+  } else if (actual !== expected) {
+    console.log(`\uD83E\uDD2E Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length) {
-    return false;
-  }
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
+const countOnly = function(allItems, itemsToCount) {
+  const results = {};
+  for (const item of allItems) {
+    console.log(item);
+    if (itemsToCount[item]) {
+      if (results[item]) {
+        results[item] += 1;
+      } else {
+        results[item] = 1;
+      }
     }
-  } return true;
+  } return results;
 };
 
-const assertArraysEqual = function(arraysOne, arraysTwo) {
-  if (eqArrays(arraysOne, arraysTwo) === true) {
-    console.log(`\uD83D\uDC7D Assertion Passed: ${arraysOne} === ${arraysTwo}`);
-  } else console.log(`\uD83E\uDD2E Assertion Failed: ${arraysOne} !== ${arraysTwo}`);
-};
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, 2, 3], [3, 2, 1]);
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
+const firstNames = [
+  "Karl",
+  "Salima",
+  "Agouhanna",
+  "Fang",
+  "Kavith",
+  "Jason",
+  "Salima",
+  "Fang",
+  "Joe"
+];
+
+const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+assertEqual(result1["Jason"], 1);
+assertEqual(result1["Karima"], undefined);
+assertEqual(result1["Fang"], 2);
+assertEqual(result1["Agouhanna"], undefined);

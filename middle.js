@@ -15,45 +15,41 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length){
-    return false
+  if (arrayOne.length !== arrayTwo.length) {
+    return false;
   }
-  for (let i =0; i < arrayOne.length; i++){
-    if (arrayOne[i] !== arrayTwo[i]){
-      return false
-    } 
+  for (let i = 0; i < arrayOne.length; i++) {
+    if (arrayOne[i] !== arrayTwo[i]) {
+      return false;
+    }
   } return true;
 };
 
-const assertArraysEqual = function(arraysOne, arraysTwo){
-  if (eqArrays(arraysOne, arraysTwo) === true){
+const assertArraysEqual = function(arraysOne, arraysTwo) {
+  if (eqArrays(arraysOne, arraysTwo) === true) {
     console.log(`\uD83D\uDC7D Assertion Passed: ${arraysOne} === ${arraysTwo}`);
   } else console.log(`\uD83E\uDD2E Assertion Failed: ${arraysOne} !== ${arraysTwo}`);
-}
+};
 
-const middle = function(array){
+const middle = function(array) {
   let arraymiddle = [];
-  if (array.length === 2 || array.length ===1){
+  if (array.length === 2 || array.length === 1) {
     return arraymiddle;
-  }  
-  let mid = 0
-  if ((array.length % 2) === 0){
-    console.log(array.length)
-    mid = ((array.length) / 2)
-    console.log(mid);
-    arraymiddle.push(array[mid-1]);
+  }
+  let mid = 0;
+  if ((array.length % 2) === 0) {
+    mid = ((array.length) / 2);
+    arraymiddle.push(array[mid - 1]);
     arraymiddle.push(array[mid]);
-    return arraymiddle
-  } else if ((array.length % 2) !== 0){
-    console.log(array.length)
+    return arraymiddle;
+  } else if ((array.length % 2) !== 0) {
     mid = (Math.floor((array.length) / 2));
-    console.log(mid)
     arraymiddle.push(array[mid]);
-    return arraymiddle
+    return arraymiddle;
   }
   
   
-  //  determine if length is odd or even or < 2. 
+  //  determine if length is odd or even or < 2.
   
   // if < 2 need to return empty
   
