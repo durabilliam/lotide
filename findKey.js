@@ -8,6 +8,8 @@ const findKey = function(object, callback) {
   return undefined;
 };
 
+module.exports = findKey;
+
 const objectList = {
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },

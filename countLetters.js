@@ -12,4 +12,7 @@ const countLetters = function(inputString) {
   } return obCountOut;
 };
 
+module.exports = countLetters;
+
 console.log(countLetters("the the the the man is grumpy"));
+
